@@ -58,7 +58,7 @@ public class AnimationPopupMenu extends ContextMenu {
 
                      MotorPrimitive mp = builder.build();
                      songRef.addPrimitive(mp);
-                     controller.drawSongbar(mouseEvent.getX(), mouseEvent.getY());
+                     controller.drawSongbar(mouseEvent.getX(), mouseEvent.getY(),mp);
 
                      songRef.printPrimitives();
 

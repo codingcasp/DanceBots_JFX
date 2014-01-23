@@ -26,6 +26,7 @@ import javafx.util.Duration;
 import org.dancebots.creator.model.AnimationPopupMenu;
 import org.dancebots.creator.model.MotorPrimitive;
 import org.dancebots.creator.model.Song;
+import org.dancebots.creator.util.PrimitiveBox;
 
 import java.io.File;
 import java.io.IOException;
@@ -240,7 +241,7 @@ public class ChoreographerController {
     }
 
 
-    public void drawSongbar (Double X, Double Y) {
+    public void drawSongbar (Double X, Double Y, MotorPrimitive mp) {
 
         Group boxGroup = new Group();
 
@@ -255,9 +256,15 @@ public class ChoreographerController {
         //box.setY(songbar.getLayoutY());
         box.setX(X);
         box.setY(Y);
-        boxGroup.getChildren().add(box);
 
 
+
+        PrimitiveBox box2 = new PrimitiveBox(mp);
+        box2.setX(X); box2.setY(Y);
+        box2.setBoxHeight(songbar.getHeight()-1);
+        box2.setBoxWidth(75D);
+
+        boxGroup.getChildren().add(box2.getContainer());
 
 
         songbarGroup.getChildren().add(boxGroup);

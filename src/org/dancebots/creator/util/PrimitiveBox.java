@@ -17,16 +17,14 @@ public class PrimitiveBox {
     private Group container;
 
     private Rectangle box;
-    private DoubleProperty boxHeight;
-    private DoubleProperty boxWidth;
-
+    private Label typeLabel;
 
 
     public PrimitiveBox(MotorPrimitive mp) {
-        container = new Group();
+        container = new Stack();
 
-        box = new Rectangle(boxHeight.doubleValue(), boxWidth.doubleValue());
-        Label typeLabel = new Label(mp.getType());
+        box = new Rectangle(0,0);
+        typeLabel = new Label(mp.getType());
 
 
 
@@ -34,24 +32,34 @@ public class PrimitiveBox {
 
     }
 
-    public DoubleProperty getBoxWidth() {
-        return boxWidth;
+    public Double getBoxWidth() {
+        return box.getWidth();
     }
 
-    public void setBoxWidth(DoubleProperty boxWidth) {
-        this.boxWidth = boxWidth;
+    public void setBoxWidth(Double boxWidth) {
+        box.setWidth(boxWidth);
     }
 
-    public DoubleProperty getBoxHeight() {
-        return boxHeight;
+    public Double getBoxHeight() {
+        return box.getHeight();
     }
 
-    public void setBoxHeight(DoubleProperty boxHeight) {
-        this.boxHeight = boxHeight;
+    public void setBoxHeight(Double boxHeight) {
+        box.setHeight(boxHeight);    }
+
+    public void setX(Double newX) {
+        box.setX(newX);
+        typeLabel.setLayoutX(box.getLayoutX()-3);
+        typeLabel.setLayoutY((box.getLayoutY()-3));
     }
 
+    public void setY(Double newY) {
+        box.setY(newY);
+    }
 
-
+    public Group getContainer() {
+        return this.container;
+    }
 
 
 
