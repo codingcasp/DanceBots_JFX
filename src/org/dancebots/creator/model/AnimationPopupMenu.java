@@ -6,6 +6,8 @@ import javafx.event.EventHandler;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItemBuilder;
 import javafx.scene.control.SeparatorMenuItemBuilder;
+import javafx.scene.input.MouseEvent;
+import org.dancebots.creator.ChoreographerController;
 
 /**
  * Created by Alessandro on 1/21/14.
@@ -13,10 +15,15 @@ import javafx.scene.control.SeparatorMenuItemBuilder;
 public class AnimationPopupMenu extends ContextMenu {
 
     Song songRef;
+    ChoreographerController controller;
+    MouseEvent mouseEvent;
 
-    public AnimationPopupMenu(Song contextSong)
+    public AnimationPopupMenu(Song contextSong, ChoreographerController contextController, MouseEvent contextEvent)
     {
     this.songRef = contextSong;
+    this.controller = contextController;
+    this.mouseEvent = contextEvent;
+
     songRef.stopClip();
 
     String MOVE_TWIST       = "Add Twist";
@@ -47,10 +54,11 @@ public class AnimationPopupMenu extends ContextMenu {
                      System.out.println("MOVE TWIST EVENT TRIGGERED");
                      Short newID = 0;
                      MotorPrimitive.Builder builder =
-                             new MotorPrimitive.Builder(newID,"TWIST",1000L,new Short("2"),1D);
+                             new MotorPrimitive.Builder(newID,"TWIST",songRef.getClipPosition(),new Short("2"),1D);
 
                      MotorPrimitive mp = builder.build();
                      songRef.addPrimitive(mp);
+                     controller.drawSongbar(mouseEvent.getX(), mouseEvent.getY());
 
 
                      songRef.printPrimitives();

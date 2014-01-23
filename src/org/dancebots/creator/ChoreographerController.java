@@ -6,13 +6,19 @@ import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Stop;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
@@ -42,6 +48,7 @@ public class ChoreographerController {
     public Label songbarTime;
     public Label songbarTimeMax;
     public Line timeLine;
+    public Group songbarGroup;
 
 
     private Song currentTrack;
@@ -113,7 +120,7 @@ public class ChoreographerController {
 
         fillSongInfo();
         initializeProgressBar();
-        drawSongbar();
+
         setupListener();
 
 
@@ -127,6 +134,10 @@ public class ChoreographerController {
         }) , new KeyFrame(Duration.millis(250)));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+
+
+        prototypeBox();
+
 
 
     }
@@ -148,10 +159,10 @@ public class ChoreographerController {
                     } else {
                         for (MotorPrimitive remitem : change.getRemoved()) {
 
-                            remitem.remove(Outer.this);
+                            System.out.println("Deleted primitive at" + remitem.getPositionInTrack().toString());
                         }
                         for (MotorPrimitive additem : change.getAddedSubList()) {
-                            additem.add(Outer.this);
+                            System.out.println("New primitive at" + additem.getPositionInTrack().toString());
                         }
                     }
 
@@ -229,19 +240,27 @@ public class ChoreographerController {
     }
 
 
-    private void drawSongbar () {
-        Double seconds = currentTrack.getDurationInSeconds();
-        Integer  secWidth   = seconds.intValue();
-        secWidth = secWidth * 4;
-        HBox box = new HBox();
+    public void drawSongbar (Double X, Double Y) {
 
-        final Canvas motorCanvas = new Canvas(secWidth,100);
-        final Canvas LEDCanvas      = new Canvas(secWidth,100);
+        Group boxGroup = new Group();
 
-        GraphicsContext gc = motorCanvas.getGraphicsContext2D();
+        Stop[] stops = new Stop[] { new Stop(0, Color.rgb(197,234,245)), new Stop(1, Color.WHITE)};
 
-        for (Integer i = 0; i<secWidth;i++) {
-        }
+        LinearGradient lg2 = new LinearGradient(1, 0, 50, 0, false, CycleMethod.NO_CYCLE, stops);
+
+        Rectangle box = new Rectangle(50,songbar.getHeight()-1);
+        box.setFill(lg2);
+        box.setStroke(Color.BLACK);
+        //box.setX(songbar.getLayoutX());
+        //box.setY(songbar.getLayoutY());
+        box.setX(X);
+        box.setY(Y);
+        boxGroup.getChildren().add(box);
+
+
+
+
+        songbarGroup.getChildren().add(boxGroup);
 
         //songbar.setContent(motorCanvas);
 
@@ -256,7 +275,7 @@ public class ChoreographerController {
         final Popup popup = new Popup();
 
 
-        AnimationPopupMenu myMenu  = new AnimationPopupMenu(currentTrack);
+        AnimationPopupMenu myMenu  = new AnimationPopupMenu(currentTrack, this, mouseEvent);
 
 
         myMenu.setX(mouseEvent.getScreenX());
@@ -272,7 +291,9 @@ public class ChoreographerController {
         return this.currentTrack;
     }
 
+    private void prototypeBox() {
 
+    }
 
 
 
