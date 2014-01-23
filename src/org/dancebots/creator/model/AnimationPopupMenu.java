@@ -60,7 +60,6 @@ public class AnimationPopupMenu extends ContextMenu {
                      songRef.addPrimitive(mp);
                      controller.drawSongbar(mouseEvent.getX(), mouseEvent.getY());
 
-
                      songRef.printPrimitives();
 
                  }

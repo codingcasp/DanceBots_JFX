@@ -6,13 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="- ChoreographerController#drawSongbar() now triggered from AnimationPopupMenu with X/Y Coordinates to add new Boxes to represent MotorPrimitives, still broken though.&#10;&#10;&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/dancebots/creator/model/test.java" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/dancebots/creator/util/PrimitiveBox.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/util/AveragingOutputAudioDevice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/util/BPM2SampleProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/util/BaseOutputAudioDevice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/util/EnergyOutputAudioDevice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/util/FileSampleProcessor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/util/Main.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/util/SampleProcessor.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/model/AnimationPopupMenu.java" afterPath="$PROJECT_DIR$/src/org/dancebots/creator/model/AnimationPopupMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/view/Choreographer.fxml" afterPath="$PROJECT_DIR$/src/org/dancebots/creator/view/Choreographer.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java" afterPath="$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/dancebots/creator/model/MotorPrimitive.java" afterPath="$PROJECT_DIR$/src/org/dancebots/creator/model/MotorPrimitive.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -89,10 +92,8 @@
       <file leaf-file-name="ChoreographerController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="283" column="0" selection-start="8378" selection-end="8378" vertical-scroll-proportion="-14.5" vertical-offset="3643" max-vertical-offset="4335">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="276" column="0" selection-start="8157" selection-end="8157" vertical-scroll-proportion="0.0" vertical-offset="3050" max-vertical-offset="3900">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,7 +101,7 @@
       <file leaf-file-name="AnimationPopupMenu.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/AnimationPopupMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="39" selection-start="487" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2220">
+            <state line="39" column="45" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2205">
               <folding />
             </state>
           </provider>
@@ -109,16 +110,26 @@
       <file leaf-file-name="MotorPrimitive.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/MotorPrimitive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="0" selection-start="2485" selection-end="2485" vertical-scroll-proportion="-8.611111" vertical-offset="810" max-vertical-offset="1590">
+            <state line="25" column="52" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrimitiveBox.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/PrimitiveBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="34" selection-start="143" selection-end="143" vertical-scroll-proportion="0.08391608" vertical-offset="0" max-vertical-offset="975">
               <folding>
-                <element signature="docComment;class#MotorPrimitive#0" expanded="true" />
-                <element signature="method#getType#0;class#MotorPrimitive#0" expanded="true" />
-                <element signature="method#getDuration#0;class#MotorPrimitive#0" expanded="true" />
-                <element signature="method#getPositionInTrack#0;class#MotorPrimitive#0" expanded="true" />
-                <element signature="method#getFrequency#0;class#MotorPrimitive#0" expanded="true" />
-                <element signature="method#getVelocity#0;class#MotorPrimitive#0" expanded="true" />
-                <element signature="method#getVelocityRight#0;class#MotorPrimitive#0" expanded="true" />
-                <element signature="method#getVelocityLeft#0;class#MotorPrimitive#0" expanded="true" />
+                <element signature="docComment;class#PrimitiveBox#0" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#832#833#0" expanded="true" />
+                <element signature="e#888#889#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#972#973#0" expanded="true" />
+                <element signature="e#1004#1005#0" expanded="true" />
+                <element signature="e#1062#1063#0" expanded="true" />
+                <element signature="e#1104#1105#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,18 +138,16 @@
       <file leaf-file-name="test.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="3" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-              <folding>
-                <element signature="docComment;class#test#0" expanded="true" />
-              </folding>
+            <state line="4" column="3" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Choreographer.fxml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Choreographer.fxml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/view/Choreographer.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="0" selection-start="3974" selection-end="3974" vertical-scroll-proportion="0.66237944" vertical-offset="518" max-vertical-offset="1200">
+            <state line="8" column="37" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="1200">
               <folding />
             </state>
           </provider>
@@ -147,7 +156,7 @@
       <file leaf-file-name="Song.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/Song.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="334" column="20" selection-start="8962" selection-end="8974" vertical-scroll-proportion="0.0" vertical-offset="2942" max-vertical-offset="3660">
+            <state line="334" column="20" selection-start="8962" selection-end="8974" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="3660">
               <folding />
             </state>
           </provider>
@@ -165,7 +174,7 @@
       <file leaf-file-name="RootLayout.fxml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/view/RootLayout.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="128" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+            <state line="8" column="128" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -216,8 +225,9 @@
         <option value="$PROJECT_DIR$/src/org/dancebots/creator/model/Song.java" />
         <option value="$PROJECT_DIR$/src/org/dancebots/creator/model/MotorPrimitive.java" />
         <option value="$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java" />
-        <option value="$PROJECT_DIR$/src/org/dancebots/creator/model/AnimationPopupMenu.java" />
         <option value="$PROJECT_DIR$/src/org/dancebots/creator/view/Choreographer.fxml" />
+        <option value="$PROJECT_DIR$/src/org/dancebots/creator/util/PrimitiveBox.java" />
+        <option value="$PROJECT_DIR$/src/org/dancebots/creator/model/AnimationPopupMenu.java" />
       </list>
     </option>
   </component>
@@ -353,6 +363,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DanceBots_JFX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DanceBots_JFX" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="creator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -389,7 +421,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dancebots_jfx.xml" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
@@ -466,19 +498,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -505,6 +524,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -629,6 +661,11 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
     </task>
+    <task id="LOCAL-00001" summary="- ChoreographerController#drawSongbar() now triggered from AnimationPopupMenu with X/Y Coordinates to add new Boxes to represent MotorPrimitives, still broken though.&#10;&#10;&#10;">
+      <created>1390444768529</created>
+      <updated>1390444768530</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -663,26 +700,26 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17203107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15290934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39977974" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27857935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27857935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20757021" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18437119" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14983352" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18437119" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14983352" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17203107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -690,15 +727,15 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15290934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15290934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18437119" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14983352" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14983352" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -711,8 +748,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27863777" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20757021" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -764,16 +801,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/MotorPrimitive.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="46" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1632">
-          <folding>
-            <element signature="docComment;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getType#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getDuration#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getPositionInTrack#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getFrequency#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocity#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocityRight#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocityLeft#0;class#MotorPrimitive#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -794,9 +822,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="191" column="32" selection-start="5966" selection-end="5966" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3195">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -810,16 +836,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/MotorPrimitive.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="39" selection-start="2123" selection-end="2123" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1470">
-          <folding>
-            <element signature="docComment;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getType#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getDuration#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getPositionInTrack#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getFrequency#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocity#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocityRight#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocityLeft#0;class#MotorPrimitive#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -840,9 +857,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="52" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1479">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -878,9 +893,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="59" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="629">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -906,9 +919,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="629">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -934,9 +945,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="0" selection-start="853" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="629">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -962,9 +971,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="170">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -990,9 +997,7 @@
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="170">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,41 +1021,6 @@
         <state line="22" column="58" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/BPM2SampleProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="35" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/SampleProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="22" selection-start="767" selection-end="767" vertical-scroll-proportion="0.09872241" vertical-offset="0" max-vertical-offset="861" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/FileSampleProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="735" selection-end="735" vertical-scroll-proportion="0.019744484" vertical-offset="0" max-vertical-offset="861" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/BaseOutputAudioDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="70" selection-start="2049" selection-end="2049" vertical-scroll-proportion="0.38792104" vertical-offset="363" max-vertical-offset="1224" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="7" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.2505669" vertical-offset="0" max-vertical-offset="882" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/AveragingOutputAudioDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="700" selection-end="735" vertical-scroll-proportion="0.019274376" vertical-offset="0" max-vertical-offset="882" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/EnergyOutputAudioDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="35" selection-start="736" selection-end="736" vertical-scroll-proportion="0.038548753" vertical-offset="0" max-vertical-offset="882" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="44" selection-start="1872" selection-end="1884" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1173">
@@ -1065,28 +1035,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/test.java">
+    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/view/RootLayout.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="3" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <folding>
-            <element signature="docComment;class#test#0" expanded="true" />
-          </folding>
+        <state line="8" column="128" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/MotorPrimitive.java">
+    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/view/Choreographer.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="2485" selection-end="2485" vertical-scroll-proportion="-8.611111" vertical-offset="810" max-vertical-offset="1590">
-          <folding>
-            <element signature="docComment;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getType#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getDuration#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getPositionInTrack#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getFrequency#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocity#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocityRight#0;class#MotorPrimitive#0" expanded="true" />
-            <element signature="method#getVelocityLeft#0;class#MotorPrimitive#0" expanded="true" />
-          </folding>
+        <state line="8" column="37" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="1200">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,33 +1056,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/view/RootLayout.fxml">
+    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="128" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+        <state line="4" column="3" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/ChoreographerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="283" column="0" selection-start="8378" selection-end="8378" vertical-scroll-proportion="-14.5" vertical-offset="3643" max-vertical-offset="4335">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="276" column="0" selection-start="8157" selection-end="8157" vertical-scroll-proportion="0.0" vertical-offset="3050" max-vertical-offset="3900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/MotorPrimitive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="52" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/model/AnimationPopupMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="39" selection-start="487" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2220">
+        <state line="39" column="45" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2205">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/view/Choreographer.fxml">
+    <entry file="file://$PROJECT_DIR$/src/org/dancebots/creator/util/PrimitiveBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="3974" selection-end="3974" vertical-scroll-proportion="0.66237944" vertical-offset="518" max-vertical-offset="1200">
-          <folding />
+        <state line="4" column="34" selection-start="143" selection-end="143" vertical-scroll-proportion="0.08391608" vertical-offset="0" max-vertical-offset="975">
+          <folding>
+            <element signature="docComment;class#PrimitiveBox#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#888#889#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1104#1105#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1134,8 +1108,8 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="library" />
               <type id="artifact" />
+              <type id="library" />
             </show-content>
           </artifact-editor>
           <last-edited>JavaFXApp</last-edited>
@@ -1143,7 +1117,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
