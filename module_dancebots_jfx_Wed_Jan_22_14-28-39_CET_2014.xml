@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_dancebots_jfx" default="compile.module.dancebots_jfx">
+  <dirname property="module.dancebots_jfx.basedir" file="${ant.file.module_dancebots_jfx}"/>
+  
+  <property name="module.jdk.home.dancebots_jfx" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.dancebots_jfx" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.dancebots_jfx" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.dancebots_jfx" value="${compiler.args}"/>
+  
+  <property name="dancebots_jfx.output.dir" value="${module.dancebots_jfx.basedir}/out/production/DanceBots_JFX"/>
+  <property name="dancebots_jfx.testoutput.dir" value="${module.dancebots_jfx.basedir}/out/test/DanceBots_JFX"/>
+  
+  <path id="dancebots_jfx.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dancebots_jfx.module.production.classpath">
+    <path refid="${module.jdk.classpath.dancebots_jfx}"/>
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="dancebots_jfx.runtime.production.module.classpath">
+    <pathelement location="${dancebots_jfx.output.dir}"/>
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="dancebots_jfx.module.classpath">
+    <path refid="${module.jdk.classpath.dancebots_jfx}"/>
+    <pathelement location="${dancebots_jfx.output.dir}"/>
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="dancebots_jfx.runtime.module.classpath">
+    <pathelement location="${dancebots_jfx.testoutput.dir}"/>
+    <pathelement location="${dancebots_jfx.output.dir}"/>
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dancebots_jfx">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dancebots_jfx">
+    <patternset refid="excluded.from.module.dancebots_jfx"/>
+  </patternset>
+  
+  <path id="dancebots_jfx.module.sourcepath">
+    <dirset dir="${module.dancebots_jfx.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.dancebots_jfx" depends="compile.module.dancebots_jfx.production,compile.module.dancebots_jfx.tests" description="Compile module DanceBots_JFX"/>
+  
+  <target name="compile.module.dancebots_jfx.production" depends="register.custom.compilers" description="Compile module DanceBots_JFX; production classes">
+    <mkdir dir="${dancebots_jfx.output.dir}"/>
+    <javac2 destdir="${dancebots_jfx.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.dancebots_jfx}/javac">
+      <compilerarg line="${compiler.args.dancebots_jfx}"/>
+      <bootclasspath refid="dancebots_jfx.module.bootclasspath"/>
+      <classpath refid="dancebots_jfx.module.production.classpath"/>
+      <src refid="dancebots_jfx.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.dancebots_jfx"/>
+    </javac2>
+    
+    <copy todir="${dancebots_jfx.output.dir}">
+      <fileset dir="${module.dancebots_jfx.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.dancebots_jfx.tests" depends="register.custom.compilers,compile.module.dancebots_jfx.production" description="compile module DanceBots_JFX; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dancebots_jfx" description="cleanup module">
+    <delete dir="${dancebots_jfx.output.dir}"/>
+    <delete dir="${dancebots_jfx.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,2 @@
+Jan 16, 2014 11:13:22 AM org.dancebots.creator.Main start
+INFO: Added CSS File sample/DanceBot.css to scene

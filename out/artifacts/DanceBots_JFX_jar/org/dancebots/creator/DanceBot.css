@@ -1,0 +1,10 @@
+
+.root {
+    -fx-spacing : 30;
+    -fx-background-color : #BDBDBD;
+}
+
+.songBar {
+
+    -fx-background-color : #AAAAFF;
+}
